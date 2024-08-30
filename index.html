@@ -69,12 +69,17 @@
       const script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
+	     config['webglContextAttributes'] = {
+			preserveDrawingBuffer: true, //Add this line to preserve the Camera.clearFlags setting
+			powerPreference: 2 //Add this line to preserve the Power Preference Player setting
+		 };
+        createUnityInstance(canvas, config, (progress) => {		
           spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
+		  
           if (canFullscreen) {
             if (!hideFullScreenButton) {
               fullscreenButton.style.display = "";
