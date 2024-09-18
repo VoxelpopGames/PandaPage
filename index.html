@@ -25,11 +25,11 @@
     <script>
       const hideFullScreenButton = "true";
       const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/Builds.loader.js";
+      const loaderUrl = buildUrl + "/Build.loader.js";
       const config = {
-        dataUrl: buildUrl + "/Builds.data.unityweb",
-        frameworkUrl: buildUrl + "/Builds.framework.js.unityweb",
-        codeUrl: buildUrl + "/Builds.wasm.unityweb",
+        dataUrl: buildUrl + "/Build.data.unityweb",
+        frameworkUrl: buildUrl + "/Build.framework.js.unityweb",
+        codeUrl: buildUrl + "/Build.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Voxelpop",
         productName: "PandaGame",
@@ -63,7 +63,7 @@
         container.className = "unity-mobile";
         //config.devicePixelRatio = 1;
       }
-      canvas.style.background = "url('" + buildUrl + "/Builds.jpg') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/Build.jpg') center / cover";
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
