@@ -5,7 +5,10 @@ var playDeckBridge = (function() {
     const handleReceiveMessage = (message) => {
         const playdeck = message?.data?.playdeck;
 
-        if (!playdeck) return;
+        if (!playdeck) {
+            console.log("No playdeck found");
+            return;
+        }
 
         console.log(playdeck);
 
