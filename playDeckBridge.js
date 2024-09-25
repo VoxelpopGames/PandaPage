@@ -13,6 +13,7 @@ var playDeckBridge = (function() {
         console.log(playdeck);
 
         if (playdeck.method === "getUserProfile") {
+            console.log("received userProfile: " + playdeck.value);
             _unityInstance?.SendMessage("PlayDeckBridge", "GetUserHandler", JSON.stringify(playdeck.value))
         }
         else if (playdeck.method === "getData") {
