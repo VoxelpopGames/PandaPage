@@ -75,15 +75,15 @@
 			preserveDrawingBuffer: true, //Add this line to preserve the Camera.clearFlags setting
 			powerPreference: 2 //Add this line to preserve the Power Preference Player setting
 		 };
-        const playdexBridgeInstance = playDeckBridge();
+        const playdeckBridgeInstance = playDeckBridge();
         createUnityInstance(canvas, config, (progress) => {		
-          playeDeckBridgeInstance?.setLoadingProgress(progress*100)
+          playdeckBridgeInstance?.setLoadingProgress(progress*100)
           spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
           console.log('Instance created',window.Telegram.WebApp);
-          playeDeckBridgeInstance?.init(unityInstance);
+          playdeckBridgeInstance?.init(unityInstance);
           window.unityInstance = unityInstance;
           loadingCover.style.display = "none";
 		  
