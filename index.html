@@ -75,7 +75,7 @@
 			preserveDrawingBuffer: true, //Add this line to preserve the Camera.clearFlags setting
 			powerPreference: 2 //Add this line to preserve the Power Preference Player setting
 		 };
-        const playdexBridgeInstance = playeDeckBridge();
+        const playdexBridgeInstance = playDeckBridge();
         createUnityInstance(canvas, config, (progress) => {		
           playeDeckBridgeInstance?.setLoadingProgress(progress*100)
           spinner.style.display = "none";
