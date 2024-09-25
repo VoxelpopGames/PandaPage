@@ -60,7 +60,7 @@ var playDeckBridge = (function() {
     return {
         init: function(unityInstance){
             _unityInstance = unityInstance;
-            _wrapper.addEventListener("message", handleReceiveMessage);
+            window.addEventListener("message", handleReceiveMessage);
         },
 
         setLoadingProgress: function (progressValue) {
