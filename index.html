@@ -7,12 +7,6 @@
     <title>PandaGame</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-	window.Telegram.WebApp.ready();
-	window.Telegram.WebApp.expand();
-    </script>
-    <script src="playDeckBridge.js"></script>
   </head>
   <body class="dark">
     <div id="unity-container" class="unity-desktop">
@@ -79,16 +73,11 @@
 			preserveDrawingBuffer: true, //Add this line to preserve the Camera.clearFlags setting
 			powerPreference: 2 //Add this line to preserve the Power Preference Player setting
 		 };
-        const playdeckBridgeInstance = playDeckBridge();
         createUnityInstance(canvas, config, (progress) => {		
-          playdeckBridgeInstance?.setLoadingProgress(progress*100)
           spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
-          console.log('Instance created',window.Telegram.WebApp);
-          playdeckBridgeInstance?.init(unityInstance);
-          window.unityInstance = unityInstance;
           loadingCover.style.display = "none";
 		  
           if (canFullscreen) {
