@@ -80,7 +80,6 @@
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
-          window.HackneyGamesSDK.setup({ botName: 'PandaMergeTest_bot' })
           loadingCover.style.display = "none";
           window.unityInstance = unityInstance;
           if (canFullscreen) {
